@@ -28,8 +28,8 @@ figure > img.screenshot:not(.full-width) {
 }
 
 /* Code blocks */
-.markdown-body .highlight pre,
-.markdown-body pre {
+.highlight pre,
+pre {
   background: #000000c7;
   color: #c9d1d9;
   font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
@@ -42,7 +42,8 @@ figure > img.screenshot:not(.full-width) {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   position: relative;
 }
-.markdown-body pre::after {
+pre::after,
+pre.highlight::after {
   content: "Code";
   position: absolute;
   top: 0;
@@ -53,4 +54,12 @@ figure > img.screenshot:not(.full-width) {
   color: white;
   border-bottom-right-radius: 6px;
   font-family: sans-serif;
+}
+pre .k,
+pre.highlight .k,
+pre .kd,
+pre.highlight .kd,
+pre .o,
+pre.highlight .o {
+    color: darkcyan;
 }
