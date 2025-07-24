@@ -4,7 +4,7 @@ author: Toufiqur Rahaman Chowdhury
 published: 2025-07-25
 updated: 2025-07-25
 tags: [npm, supply-chain, infosec, social-engineering, malware, linkedin, recruitment, nodejs]
-canonical_url: https://github.com/alien45/journal/2025-07-25-npm-attack/README.md
+canonical_url: https://github.com/alien45/journal/2025-07-25-targeted-dev-attack/README.md
 ---
 
 <h2 style="border: none">
