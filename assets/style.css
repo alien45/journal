@@ -1,5 +1,6 @@
 /* Hide the default GitHub page title (repo name) */
-h1 {
+.markdown-body h1,
+.markdown-body::before {
     display: none;
 }
 
