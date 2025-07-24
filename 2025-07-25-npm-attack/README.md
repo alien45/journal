@@ -26,27 +26,76 @@ Earlier in the week, I applied to a few developer roles online. I received an em
 
 **June 26, 2025**  
 A LinkedIn user named Michael McCarthy, a CEO and Angel Investor from Canada, claiming to be an employer messaged me with an opportunity for a full-stack developer role.
+ 
+<figure>
+  <img
+    alt="Figure 1: Linkedin email notifying new message received from the fake employer, Michael McCarthy"
+    class="screenshot"
+    src="assets/linkedin-message-email-notification.png"
+  />
+  <figcaption>Figure 1: Linkedin email notifying new message received from the fake employer, Michael McCarthy</figcaption>
+</figure>
 
-![Linkedin email notifying new message received from the fake employer, Michael McCarthy](assets/linkedin-message-email-notification.png)  
 
 The role was well-aligned with my experience and most recent roles. 
 
-![LinkedIn conversation: First message received from the fake employer](assets/linkedin-chat-1.png)  
+<figure>
+  <img 
+    alt="Figure 2:  First LinkedIn message received from the fake employer"
+    class="screenshot"
+    src="assets/linkedin-chat-1.png"
+  />
+  <figcaption>Figure 2: First LinkedIn message received from the fake employer</figcaption>
+</figure> 
 
-![LinkedIn conversation: fake employer explaining the job](assets/linkedin-chat-2.png)  
-
+<figure>
+  <img 
+    alt="Figure 3: fake employer explaining the job"
+    class="screenshot"
+    src="assets/linkedin-chat-2.png"
+  />
+  <figcaption>Figure 3: fake employer explaining the job</figcaption>
+</figure> 
 
 They shared a link to a GitHub repo URL and asked me to complete a quick [coding test](assets/Test_Requirement.docx). The repo URL took me to a 404 (not found) page. 
 
-![LinkedIn conversation: discussing the "meeting with HR"](assets/linkedin-chat-3.png)  
+<figure>
+  <img 
+    alt="Figure 4: discussing the meeting with HR"
+    class="screenshot"
+    src="assets/linkedin-chat-3.png"
+  />
+  <figcaption>Figure 4: discussing the "meeting with HR"</figcaption>
+</figure> 
 
-![LinkedIn Conversation: calendly.com invite to schedule an interview and Google Docs link with the take home test description](assets/linkedin-chat-4.png)  
+<figure>
+  <img 
+    alt="Figure 5: calendly.com invite to schedule an interview and Google Docs link with the take home test description"
+    class="screenshot"
+    src="assets/linkedin-chat-4.png"
+  />
+  <figcaption>Figure 5: calendly.com invite to schedule an interview and Google Docs link with the take home test description</figcaption>
+</figure> 
 
-![Calendly.com: scheduling an interview. Screenshot taken while writing this post.](assets/calendly.png)  
+<figure>
+  <img 
+    alt="Figure 6: Scheduling an interview at calendly.com"
+    class="screenshot"
+    src="assets/calendly.png"
+  />
+  <figcaption>Figure 6: Scheduling an interview at calendly.com</figcaption>
+</figure> 
 
 I initially presumed the GitHub project may have been private and required an invite for me to access it. When I asked, they provided a Bitbucket repository instead. Now I realize the account might have been deleted/suspended due to reporting by others or the malware being detected by GitHub.
 
-![LinkedIn conversation: after mentioning the dead GitHub repo URL fake employer provided a BitBucket repo URL](assets/linkedin-chat-5.png)  
+<figure>
+  <img 
+    alt="Figure 7: After mentioning the dead GitHub repo URL fake employer provided a BitBucket repo URL"
+    class="screenshot"
+    src="assets/linkedin-chat-5.png"
+  />
+  <figcaption>Figure 7: After mentioning the dead GitHub repo URL fake employer provided a BitBucket repo URL</figcaption>
+</figure> 
 
 A few hours later, after cloning the Bitbucket repo, I attempted to install all the dependencies by running `npm install`, but the installation consistently got stuck during the initial loading stage (with a loading spinner). I presumed something might have been wrong with either my ISP’s DNS server and/or the connection with NPM servers.  
   
@@ -71,9 +120,23 @@ The attacker repeated the exact same tactic for the fourth time: by recreating t
 
 After repeated takedowns of their malicious NPM packages, the attacker pivoted: they began embedding the backdoor code directly into the test project itself, removing the dependency on NPM altogether. And they created a new repo called NovaX.
 
-![Malicious repositories created by the attacker](assets/bitbucket-web3_space1.png)
+<figure>
+  <img 
+    alt="Figure 8: Malicious repositories created by the attacker"
+    class="screenshot"
+    src="assets/bitbucket-web3_space1.png"
+  />
+  <figcaption>Figure 8: Malicious repositories created by the attacker</figcaption>
+</figure> 
 
-![The two user IDs used to create the initial commit and update all the malicious repositories](assets/bitbucket-web3_space2.png)
+<figure>
+  <img 
+    alt="Figure 9: The two user IDs used to create the initial commit and update all the malicious repositories"
+    class="screenshot"
+    src="assets/bitbucket-web3_space2.png"
+  />
+  <figcaption>Figure 9: The two user IDs used to create the initial commit and update all the malicious repositories</figcaption>
+</figure>
 
 
 A few days ago, I have received an email job alert from [arc.dev](https://arc.dev) a job posting by Tirios, the same name the fake employer used. This appeared legit but I was more curious so I applied to the job. I was hoping to get a response before I publish the article. So far I haven't received any response. Either the fake employer is now using [arc.dev](https://arc.dev) to attract new victims or this is the real deal.
