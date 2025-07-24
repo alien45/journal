@@ -30,8 +30,7 @@ figcaption {
     margin-top: 0.5rem;
 }
 figure > img.screenshot:not(.full-width) {
-    max-width: 450px;
-    width: 90%;
+    max-width: clamp(15px, 90%, 450px);
 }
 
 /* Code blocks */
@@ -69,4 +68,10 @@ pre.highlight .kd,
 pre .o,
 pre.highlight .o {
     color: darkcyan;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        margin: 2.5rem 1rem;
+    }
 }
