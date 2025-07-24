@@ -7,7 +7,13 @@ tags: [npm, supply-chain, infosec, social-engineering, malware, linkedin, recrui
 canonical_url: https://github.com/alien45/journal/2025-07-09-targeted_npm_attack_story.md
 ---
 
-<h2 style="border: none">Title: I Was Targeted by a Fake Employer Running a Real NPM Supply Chain Attack</h2>
+<h2 style="border: none">
+Title: I Was Targeted by a Fake Employer Running a Real NPM Supply Chain Attack
+</h2>
+
+<h3 style="border: none; margin-top: 0.4em; font-style: italic; font-weight: normal; color: #555;">
+  A journey through the rabbit-hole of backdoors and digital deception
+</h3>
 
 *Author: [Toufiqur Rahaman Chowdhury](https://aliens.github.io/cv)* | Published: 2025-07-09
 
