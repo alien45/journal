@@ -3,6 +3,7 @@ h1 {
     display: none;
 }
 
+/* Display images with caption */
 figure > img {
     display: block;
     max-width: 100%;
@@ -22,8 +23,34 @@ figcaption {
     color: #6a737d;
     margin-top: 0.5rem;
 }
-
-img.screenshot:not(.full-width) {
+figure > img.screenshot:not(.full-width) {
     max-width: 450px;
 }
-  
+
+/* Code blocks */
+.markdown-body .highlight pre,
+.markdown-body pre {
+  background: #000000c7;
+  color: #c9d1d9;
+  font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  padding: 1.25rem 1.25rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+.markdown-body pre::after {
+  content: "Code";
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.15rem .6rem .1rem .8rem;
+  font-size: 0.7rem;
+  background: #626262a6;
+  color: white;
+  border-bottom-right-radius: 6px;
+  font-family: sans-serif;
+}

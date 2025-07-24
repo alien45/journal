@@ -148,7 +148,7 @@ A few days ago, I have received an email job alert from [arc.dev](https://arc.de
 
 In the BitBucket repo, the `async-queuelite` package was only imported once in the `contracts/controllers/userController.js` and invoked the function only once at startup, but in the middle of the file like this:
 
-```
+```javascript
 ...some imports
 const jsonWebHooks = require("json-webhooks");
 
