@@ -12,7 +12,7 @@ You're welcome to read, explore, or use anything here — just know that I write
 
 > Articles are listed in reverse chronological order.
 
-- 📅 2025-07-09 — [I Was Targeted by a Fake Employer Running a Real NPM Supply Chain Attack](./2025-07-09-targeted_npm_attack_story/)
+- 📅 2025-07-25 — [I Was Targeted by a Fake Employer Running a Real NPM Supply Chain Attack](./2025-07-25-npm-attack/)
 
 <!-- Future entries will appear here -->
 <!-- Example:
