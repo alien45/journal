@@ -8,7 +8,7 @@ canonical_url: https://github.com/alien45/journal/2025-07-25-npm-attack/README.m
 ---
 
 <h2 style="border: none">
-Title: I Was Targeted by a Fake Employer Running a Real NPM Supply Chain Attack
+I Was Targeted by a Fake Employer Running a Real NPM Supply Chain Attack
 </h2>
 
 <h3 style="border: none; margin-top: 0.4em; font-style: italic; font-weight: normal; color: #555;">
@@ -27,24 +27,26 @@ Earlier in the week, I applied to a few developer roles online. I received an em
 **June 26, 2025**  
 A LinkedIn user named Michael McCarthy, a CEO and Angel Investor from Canada, claiming to be an employer messaged me with an opportunity for a full-stack developer role.
 
-![Linkedin email notifying new message received from the fake employer, Michael McCarthy](assets/linkedin-message-email-notification.png)
+![Linkedin email notifying new message received from the fake employer, Michael McCarthy](assets/linkedin-message-email-notification.png)  
 
 The role was well-aligned with my experience and most recent roles. 
 
 ![LinkedIn conversation: First message received from the fake employer](assets/linkedin-chat-1.png)  
 
-![LinkedIn conversation: fake employer explaining the job](assets/linkedin-chat-2.png)
+![LinkedIn conversation: fake employer explaining the job](assets/linkedin-chat-2.png)  
 
 
-They shared a link to a GitHub repo URL and asked me to complete a quick coding test. The URL took me to a 404 (not found) page. 
+They shared a link to a GitHub repo URL and asked me to complete a quick [coding test](assets/Test_Requirement.docx). The repo URL took me to a 404 (not found) page. 
 
-![LinkedIn conversation: discussing the "meeting with HR"](assets/linkedin-chat-3.png) 
-![LinkedIn Conversation: calendly.com invite to schedule an interview and Google Docs link with the take home test description](assets/linkedin-chat-4.png) 
-![Calendly.com: scheduling an interview. Screenshot taken while writing this post.](assets/calendly.png)
+![LinkedIn conversation: discussing the "meeting with HR"](assets/linkedin-chat-3.png)  
+
+![LinkedIn Conversation: calendly.com invite to schedule an interview and Google Docs link with the take home test description](assets/linkedin-chat-4.png)  
+
+![Calendly.com: scheduling an interview. Screenshot taken while writing this post.](assets/calendly.png)  
 
 I initially presumed the GitHub project may have been private and required an invite for me to access it. When I asked, they provided a Bitbucket repository instead. Now I realize the account might have been deleted/suspended due to reporting by others or the malware being detected by GitHub.
 
-![LinkedIn conversation: after mentioning the dead GitHub repo URL fake employer provided a BitBucket repo URL](assets/linkedin-chat-5.png)
+![LinkedIn conversation: after mentioning the dead GitHub repo URL fake employer provided a BitBucket repo URL](assets/linkedin-chat-5.png)  
 
 A few hours later, after cloning the Bitbucket repo, I attempted to install all the dependencies by running `npm install`, but the installation consistently got stuck during the initial loading stage (with a loading spinner). I presumed something might have been wrong with either my ISP’s DNS server and/or the connection with NPM servers.  
   
@@ -372,3 +374,5 @@ Feel free to share this story. If it protects even one developer, it's worth it.
 Toufiqur Rahaman Chowdhury is a full-stack software developer with over 8 years of experience building scalable web applications. He’s worked across frontend, backend, and blockchain systems.
 
 🔗 [Open Source CV](https://aliens.github.io/cv) • [LinkedIn](https://www.linkedin.com/in/toufiq/) • [GitHub](https://github.com/alien45) • [Contact Or Hire Me!](https://alien45.github.io/cv/Toufiqur_Chowdhury_CV.pdf)
+
+<link rel="stylesheet" href="../assets/style.css" />
