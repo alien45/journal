@@ -33,7 +33,7 @@ You're welcome to read, explore, or use anything here — just know that I write
 
 I'm Toufiqur Rahaman Chowdhury — a full-stack developer focused on pragmatic software, learning by tinkering, tackling challenges head-on, and sometimes documenting the things others overlook.
 
-- 🔗 [CV](https://aliens.github.io/cv)
+- 🔗 [CV](https://alien45.github.io/cv)
 - 💼 [LinkedIn](https://www.linkedin.com/in/toufiq/)
 - 🧑‍🚀 [GitHub](https://github.com/alien45)
 - ✉️ [Contact or Hire Me](https://alien45.github.io/cv/Toufiqur_Chowdhury_CV.pdf)
