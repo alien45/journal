@@ -15,7 +15,7 @@ I Was Targeted by a Fake Employer Running a Real NPM Supply Chain Attack
   A journey through the rabbit-hole of backdoors and digital deception
 </h3>
 
-*Author: [Toufiqur Rahaman Chowdhury](https://aliens.github.io/cv)* • Published: 2025-07-25 • [← Back to Journal Home](../)
+*Author: [Toufiqur Rahaman Chowdhury](https://alien45.github.io/cv)* • Published: 2025-07-25 • [← Back to Journal Home](../)
 
 ---
 
@@ -436,7 +436,7 @@ Feel free to share this story. If it protects even one developer, it's worth it.
 
 Toufiqur Rahaman Chowdhury is a full-stack software developer with over 8 years of experience building scalable web applications. He’s worked across frontend, backend, and blockchain systems.
 
-🔗 [← Back to Journal Home](../) • [CV](https://aliens.github.io/cv) • [LinkedIn](https://www.linkedin.com/in/toufiq/) • [GitHub](https://github.com/alien45) • [Contact / Hire Me](https://alien45.github.io/cv/Toufiqur_Chowdhury_CV.pdf)
+🔗 [← Back to Journal Home](../) • [CV](https://alien45.github.io/cv) • [LinkedIn](https://www.linkedin.com/in/toufiq/) • [GitHub](https://github.com/alien45) • [Contact / Hire Me](https://alien45.github.io/cv/Toufiqur_Chowdhury_CV.pdf)
 
 
 <link rel="stylesheet" href="../assets/style.css" />
