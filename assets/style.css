@@ -84,7 +84,7 @@ pre.copied {
   border: 1px solid rgba(255, 255, 0, 0.253);
 }
 pre.copied::after {
-  content: "Copied!";
+  content: "Copied!" !important;
 }
 /** adjust code colors for better visibility **/
 pre .k,
