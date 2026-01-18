@@ -53,7 +53,7 @@ const handleToggleClick = (event) => {
     btn.textContent = getBtnText(!dark);
     document.body.classList.add(dark ? "light" : "dark");
     document.body.classList.remove(dark ? "dark" : "light");
-    localStorage.setItem(dark, !dark);
+    localStorage.setItem("dark", !dark);
 };
 
 /** Add theme toggle button */
