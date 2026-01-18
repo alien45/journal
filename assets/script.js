@@ -1,8 +1,11 @@
 const btnToggleId = "theme-toggle";
 const getBtnText = (dark) => (dark ? "☀ Light" : "🌙 Dark");
-const isDark = () =>
-    localStorage.getItem("dark") === true ||
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
+const isDark = () => {
+    const dark = localStorage.getItem("dark");
+    return dark === undefined
+        ? window.matchMedia("(prefers-color-scheme: dark)").matches
+        : dark;
+};
 
 // Handle copy code icon click
 const iconClickHandler = async (event) => {
