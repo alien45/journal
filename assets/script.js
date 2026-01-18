@@ -4,7 +4,7 @@ const isDark = () => {
     const dark = localStorage.getItem("dark");
     return dark === undefined
         ? window.matchMedia("(prefers-color-scheme: dark)").matches
-        : dark;
+        : dark === "true";
 };
 
 // Handle copy code icon click
