@@ -31,6 +31,8 @@ _Author: [Toufiqur Rahaman Chowdhury](https://alien45.github.io/cv)_
 
 ---
 
+Job hunting is stressful enough without having to dodge sophisticated cyberattacks. I recently encountered a fake employer on LinkedIn who wasn't just phishing for data, they were distributing malware via a custom NPM supply chain attack. This article documents the entire experience, from the initial contact to dissecting the malicious code, to help other developers recognize and avoid similar traps.
+
 ## Table of Contents
 
 - [Timeline of Events](#timeline-of-events)

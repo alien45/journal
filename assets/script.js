@@ -1,64 +1,75 @@
-setTimeout(() => {
-    // On-click copy code
-    const iconClickHandler = async (event) => {
-        const iconWidth = 50; //px
-        const iconHeight = 22; //px
-        const rect = event.target.getBoundingClientRect();
-        const x = event.clientX;
-        const y = event.clientY;
-        const icCopyIconClicked =
-            x >= rect.x &&
-            x <= rect.x + iconWidth &&
-            y >= rect.y &&
-            y <= rect.y + iconHeight;
-        if (!icCopyIconClicked) return;
+const btnToggleId = "theme-toggle";
+const getBtnText = (dark) => (dark ? "☀ Light" : "🌙 Dark");
+const isDark = () =>
+    localStorage.getItem("dark") === true ||
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-        event.preventDefault();
-        const codeStr = event.target.textContent;
-        let success = false;
-        try {
-            await navigator.clipboard.writeText(codeStr);
-            success = true;
-        } catch (err) {
-            const el = document.createElement("textarea");
-            el.value = codeStr;
-            el.setAttribute("readonly", "");
-            el.style.position = "absolute";
-            el.style.left = "-9999px";
-            document.body.appendChild(el);
-            el.select();
+// Handle copy code icon click
+const iconClickHandler = async (event) => {
+    const iconWidth = 50; //px
+    const iconHeight = 22; //px
+    const rect = event.target.getBoundingClientRect();
+    const x = event.clientX;
+    const y = event.clientY;
+    const icCopyIconClicked =
+        x >= rect.x &&
+        x <= rect.x + iconWidth &&
+        y >= rect.y &&
+        y <= rect.y + iconHeight;
+    if (!icCopyIconClicked) return;
 
-            success = document.execCommand("copy");
-            document.body.removeChild(el);
-        }
-        console.log("Code copied:", success);
-        if (!success) return;
+    event.preventDefault();
+    const codeStr = event.target.textContent;
+    let success = false;
+    try {
+        await navigator.clipboard.writeText(codeStr);
+        success = true;
+    } catch (err) {
+        const el = document.createElement("textarea");
+        el.value = codeStr;
+        el.setAttribute("readonly", "");
+        el.style.position = "absolute";
+        el.style.left = "-9999px";
+        document.body.appendChild(el);
+        el.select();
 
-        event.target.classList.add("copied");
-        setTimeout(() => {
-            event.target.classList.remove("copied");
-        }, 1000);
-    };
+        success = document.execCommand("copy");
+        document.body.removeChild(el);
+    }
+    console.log("Code copied:", success);
+    if (!success) return;
 
-    // add a dark mode toggle
+    event.target.classList.add("copied");
+    setTimeout(() => {
+        event.target.classList.remove("copied");
+    }, 1000);
+};
+
+/** Handle theme toggle button click */
+const handleToggleClick = (event) => {
+    event.preventDefault();
+    const btn = event.target;
+    const dark = isDark();
+    btn.textContent = getBtnText(!dark);
+    document.body.classList.add(dark ? "light" : "dark");
+    document.body.classList.remove(dark ? "dark" : "light");
+    localStorage.setItem(dark, !dark);
+};
+
+/** Add theme toggle button */
+const toggleBtnSetup = () => {
     const btnWrap = document.createElement("div");
     const btn = document.createElement("button");
-    btn.id = "theme-toggle";
-    btn.textContent = getBtnText(isDark());
+    btn.id = btnToggleId;
+    const dark = isDark();
+    btn.textContent = getBtnText(dark);
     btnWrap.appendChild(btn);
     document.body.appendChild(btnWrap);
-    document.body.classList.add(isDark() ? "dark" : "light");
-    const handleToggleClick = (event) => {
-        event.preventDefault();
-        const btn = event.target;
-        const dark = document.body.classList.contains("light")
-            ? false
-            : document.body.classList.contains("dark") || isDark();
-        console.log({ dark, currentText: btn.textContent, text: getBtnText(dark) });
-        btn.textContent = getBtnText(!dark);
-        document.body.classList.add(dark ? "light" : "dark");
-        document.body.classList.remove(dark ? "dark" : "light");
-    };
+    document.body.classList.add(dark ? "dark" : "light");
+};
+
+setTimeout(() => {
+    toggleBtnSetup();
 
     document.body.addEventListener("click", (event) => {
         switch (event.target.nodeName) {
@@ -66,13 +77,9 @@ setTimeout(() => {
                 iconClickHandler(event);
                 break;
             case "BUTTON":
-                console.log(event.target.id);
-                if (!event.target.id === "theme-toggle") return;
+                if (event.target.id !== btnToggleId) return;
                 handleToggleClick(event);
                 break;
         }
     });
 }, 100);
-
-const isDark = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
-const getBtnText = (dark) => (dark ? "☀ Light" : "🌙 Dark");
