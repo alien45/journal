@@ -1,7 +1,7 @@
 ---
 title: Brave new world of scammers targetting developers
 author: Toufiqur Rahaman Chowdhury
-published: 2026-01-18
+published: 2026-01-19
 updated:
 tags:
   [
@@ -15,7 +15,7 @@ tags:
     linkedin,
     blockchain,
   ]
-canonical_url: https://github.com/alien45/journal/2026-01-18-template-title/
+canonical_url: https://alien45.github.io/journal/2026-01-19-brave-new-world-of-scammers/
 ---
 
 <h1 class="page-title">
@@ -26,7 +26,7 @@ Brave new world of scammers targetting developers
   Scammers are getting smarter and bolder.
 </h2>
 
-_Author: [Toufiqur Rahaman Chowdhury](https://alien45.github.io/cv)_ • Published: 2026-01-18 • [← Back to Journal Home](../)
+_Author: [Toufiqur Rahaman Chowdhury](https://alien45.github.io/cv)_ • Published: 2026-01-19 • [← Back to Journal Home](../)
 
 ---
 
@@ -47,6 +47,7 @@ Please note that while I have been repeatedly targetted, I was cautious and luck
 - [Decoding the `getMemo()` Payload](#decoding-the-getmemo-payload)
   - [The Decoded Backdoor Payload](#the-decoded-backdoor-payload)
   - [Other Malicious Code](#other-malicious-code)
+- [Safety Tips](#safety-tips)
 - [Conclusion](#conclusion)
 - [About the Author](#about-the-author)
 
@@ -307,7 +308,16 @@ The RCE was the main payload, but the project was littered with other vulnerabil
 
 - **Deprecated Crypto Packages**: The project used the `crypto` package from npm, which has been deprecated for years in favor of Node.js's built-in `crypto` module. It also used `ethereumjs-tx`, which is deprecated in favor of `@ethereumjs/tx`. Using outdated, unmaintained crypto libraries is a massive security risk and a clear sign that the author is not a legitimate developer.
 
-## How to avoid
+## Safety Tips:
+
+Based on my humble experiences, here are some tips on how to keep yourself safe in the wild west of online job hunting space:
+
+- First and foremost, ALWAYS check if the project contains `.vscode/tasks.json` file.
+  - If it does, check if it contains any scripts that may run on-open.
+  - If unsure, it's best to not open the project in VSCode or any similar/modern editors on your local machine.
+- [Github Codespaces](https://github.com/codespaces/) is an excellent way run anything that may contain malicious code. With 30+ hours of runtime, the free version is more than sufficient for job-hunting needs.
+- Learn and get used to running projects locally using Docker (or Podman) containers or VirtualBox. If you are paranoid about security, you can also consider using [Cubes OS](https://www.qubes-os.org/) as you primary OS.
+- When running and opening any project in your browser, make sure to use incognito mode and disable extensions.
 
 ## Conclusion
 
