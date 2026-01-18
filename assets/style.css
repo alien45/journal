@@ -5,11 +5,13 @@ body {
 
 .page-title {
   border: none;
+  font-size: 1.6em;
 }
 
 .page-subtitle {
   border: none;
   color: #555;
+  font-size: 1em;
   font-style: italic;
   font-weight: normal;
   margin-top: 0.4em;
@@ -99,5 +101,35 @@ pre.highlight .o {
 @media screen and (max-width: 600px) {
   body {
     margin: 2.5rem 1rem;
+  }
+}
+
+#theme-toggle {
+  background: #141414;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 5px;
+  position: fixed;
+  right: 15px;
+  top: 5px;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body:not(.light),
+  body.dark {
+    background: #141414;
+    color: white;
+  }
+
+  body:not(.light) div.highlight,
+  body.dark div.highlight {
+    background: transparent;
+  }
+
+  body:not(.light) #theme-toggle,
+  body.dark #theme-toggle {
+    background: grey;
   }
 }

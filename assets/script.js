@@ -1,6 +1,6 @@
 setTimeout(() => {
     // On-click copy code
-    const clickHandler = async (event) => {
+    const iconClickHandler = async (event) => {
         const iconWidth = 50; //px
         const iconHeight = 22; //px
         const rect = event.target.getBoundingClientRect();
@@ -13,6 +13,7 @@ setTimeout(() => {
             y <= rect.y + iconHeight;
         if (!icCopyIconClicked) return;
 
+        event.preventDefault();
         const codeStr = event.target.textContent;
         let success = false;
         try {
@@ -38,5 +39,40 @@ setTimeout(() => {
             event.target.classList.remove("copied");
         }, 1000);
     };
-    document.body.addEventListener("click", clickHandler);
+
+    // add a dark mode toggle
+    const btnWrap = document.createElement("div");
+    const btn = document.createElement("button");
+    btn.id = "theme-toggle";
+    btn.textContent = getBtnText(isDark());
+    btnWrap.appendChild(btn);
+    document.body.appendChild(btnWrap);
+    document.body.classList.add(isDark() ? "dark" : "light");
+    const handleToggleClick = (event) => {
+        event.preventDefault();
+        const btn = event.target;
+        const dark = document.body.classList.contains("light")
+            ? false
+            : document.body.classList.contains("dark") || isDark();
+        console.log({ dark, currentText: btn.textContent, text: getBtnText(dark) });
+        btn.textContent = getBtnText(!dark);
+        document.body.classList.add(dark ? "light" : "dark");
+        document.body.classList.remove(dark ? "dark" : "light");
+    };
+
+    document.body.addEventListener("click", (event) => {
+        switch (event.target.nodeName) {
+            case "PRE":
+                iconClickHandler(event);
+                break;
+            case "BUTTON":
+                console.log(event.target.id);
+                if (!event.target.id === "theme-toggle") return;
+                handleToggleClick(event);
+                break;
+        }
+    });
 }, 100);
+
+const isDark = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
+const getBtnText = (dark) => (dark ? "☀ Light" : "🌙 Dark");
