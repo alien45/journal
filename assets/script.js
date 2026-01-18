@@ -71,18 +71,16 @@ const toggleBtnSetup = () => {
     document.body.classList.add(dark ? "dark" : "light");
 };
 
-setTimeout(() => {
-    toggleBtnSetup();
+toggleBtnSetup();
 
-    document.body.addEventListener("click", (event) => {
-        switch (event.target.nodeName) {
-            case "PRE":
-                iconClickHandler(event);
-                break;
-            case "BUTTON":
-                if (event.target.id !== btnToggleId) return;
-                handleToggleClick(event);
-                break;
-        }
-    });
-}, 100);
+document.body.addEventListener("click", (event) => {
+    switch (event.target.nodeName) {
+        case "PRE":
+            iconClickHandler(event);
+            break;
+        case "BUTTON":
+            if (event.target.id !== btnToggleId) return;
+            handleToggleClick(event);
+            break;
+    }
+});
