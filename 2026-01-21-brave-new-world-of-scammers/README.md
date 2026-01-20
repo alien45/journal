@@ -52,6 +52,10 @@ Please note that while I have been repeatedly targetted, I was cautious and luck
   - [Other Malicious Code](#other-malicious-code)
 - [January 2026: An Attack Hidden Inside Normal Hiring Rituals](#january-2026-an-attack-hidden-inside-normal-hiring-rituals)
 - [Safety Tips](#safety-tips)
+  - [Editor and Workspace Safety](#editor-and-workspace-safety)
+  - [Execution and Environment Isolation](#execution-and-environment-isolation)
+  - [Browser and Network Hygiene](#browser-and-network-hygiene)
+  - [Recruitment and Social Engineering Red Flags](#recruitment-and-social-engineering-red-flags)
 - [Conclusion](#conclusion)
 - [About the Author](#about-the-author)
 
