@@ -36,6 +36,8 @@ In this article, I will describe how I narrowly avoided a major security breach 
 
 Please note that while I have been repeatedly targetted, I was cautious and lucky enough to have sniffed the red flags in time to avoid being hacked. However, I came across LinkedIn posts by other who were not as lucky.
 
+<img src="./assets/hero.png" />
+
 ## Table of Contents
 
 - [Timeline of Events](#timeline-of-events)
