@@ -97,6 +97,14 @@ pre .o,
 pre.highlight .o {
   color: darkcyan;
 }
+/** Inline CSS property names**/
+.highlight .nl {
+  color: #ffffff;
+}
+/** Inline CSS property ID selector **/
+.highlight .nf {
+  color: #000080;
+}
 
 @media screen and (max-width: 600px) {
   body {
