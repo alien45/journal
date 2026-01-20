@@ -44,4 +44,4 @@ I'm Toufiqur Rahaman Chowdhury — a full-stack developer focused on pragmatic s
 ✍️ Want to reach out about something you read here? Feel free to open an issue, drop a message, or fork and riff on any idea.
 
 <link rel="stylesheet" href="assets/style.css" />
-<script type="text/javascript" src="../assets/script.js"></script>
+<script type="text/javascript" src="assets/script.js"></script>
