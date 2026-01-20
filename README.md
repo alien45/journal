@@ -12,6 +12,7 @@ You're welcome to read, explore, or use anything here — just know that I write
 
 > Articles are listed in reverse chronological order.
 
+- 📅 2025-07-25 — [Brave New World of Scammers Targeting Developers](./2026-01-21-brave-new-world-of-scammers/)
 - 📅 2025-07-25 — [I Was Targeted by a Fake Employer Running a Real NPM Supply Chain Attack](./2025-07-25-targeted-dev-attack/)
 
 <!-- Future entries will appear here -->
@@ -43,3 +44,4 @@ I'm Toufiqur Rahaman Chowdhury — a full-stack developer focused on pragmatic s
 ✍️ Want to reach out about something you read here? Feel free to open an issue, drop a message, or fork and riff on any idea.
 
 <link rel="stylesheet" href="assets/style.css" />
+<script type="text/javascript" src="../assets/script.js"></script>
