@@ -449,6 +449,8 @@ Notice the links to job posts are not the same. Both jobs were posted 3-4 months
 
 Before cloning the repository, I inspected its contents and found a `.vscode/tasks.json` file configured to execute a remote script automatically on project load. This meant that simply opening the folder in VS Code or similar editors (Windsurf, Cursor, etc.) would have triggered remote code execution, without running the application or interacting with the code at all. Unlike the December incident, the pressure to open the project was deferred rather than immediate. The task explicitly stated that a follow-up interview would involve reviewing the code **in VSCode** and explaining the submitted changes, which would certainly require opening the repository in VSCode and executing the RCE script. At the time I inspected it, the remote script itself was minimal and benign, which strongly suggests it was intended as a placeholder. The more plausible scenario is that the payload would have been swapped or activated closer to the interview stage, once the target had demonstrated compliance and trust.
 
+It is also worth noting that by the time I inspected the repository, which had already been deleted and recreated at least once, **multiple pull requests had already been submitted by other developers** as part of this task. This strongly suggests that the setup was convincing enough for some candidates to clone and open the project locally, likely without realizing that simply doing so could trigger remote code execution.
+
 ## Safety Tips:
 
 Based on my experiences, here are some tips to help you stay safe in the wild west of the online job-hunting space. These are as much a checklist for me as they are general advice for any developer.
