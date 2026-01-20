@@ -417,16 +417,14 @@ In January 2026, I encountered another attempt that relied far more on social en
   <figcaption>Figure 11: LinkedIn message with Google Docs link of the task details and invitation for interview after submission.</figcaption>
 </figure>
 
-<a href="assets/january-review-task.jpg" target="_blank">
-  <figure>
-    <img
-      alt="Figure 12: A detailed Google Docs document mimicking a real take-home coding task."
-      class="screenshot"
-      src="assets/january-review-task.jpg"
-    />
-    <figcaption>Figure 12: A detailed Google Docs document mimicking a real take-home coding task.</figcaption>
-  </figure>
-</a>
+<figure>
+  <img
+    alt="Figure 12: A detailed Google Docs document mimicking a real take-home coding task."
+    class="screenshot"
+    src="assets/january-review-task.jpg"
+  />
+  <figcaption>Figure 12: A detailed Google Docs document mimicking a real take-home coding task.</figcaption>
+</figure>
 
 Several hours before this task was even sent, a completely separate LinkedIn account, unrelated to the role or company, sent me a generic message about a position I had never applied for. At the time it felt random. The following day, when I had not submitted any pull request, the same account sent a second message. In hindsight, These messages were likely intended to serve as a simple activity check to confirm whether I was active on LinkedIn and reading messages before and after the task delivery.
 
