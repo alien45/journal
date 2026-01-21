@@ -41,10 +41,9 @@ Please note that while I have been repeatedly targetted, I was cautious and luck
 ## Table of Contents
 
 - [Timeline of Events](#timeline-of-events)
-  - [Incident 1: Live interview and RCE from Smart Contract](#incident-1-live-interview-and-rce-from-smart-contract)
-    - [December 16, 2025](#december-16-2025): Initial contact & scheduling a meeting
-    - [December 17, 2025](#december-17-2025): Live attempt to hack my computer
-    - [December 18, 2025](#december-18-2025): Investigation of the code
+  - [December 16, 2025](#december-16-2025): Initial contact & scheduling a meeting
+  - [December 17, 2025](#december-17-2025): Live attempt to hack my computer
+  - [December 18, 2025](#december-18-2025): Investigation of the code
 - [The Initial Discovery: A Backdoor in Plain Sight](#the-initial-discovery-a-backdoor-in-plain-sight)
 - [The Payload Delivery System: A Covert Smart Contract](#the-payload-delivery-system-a-covert-smart-contract)
 - [Decoding the `getMemo()` Payload](#decoding-the-getmemo-payload)
