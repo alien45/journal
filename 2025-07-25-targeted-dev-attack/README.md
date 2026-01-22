@@ -2,7 +2,7 @@
 title: I Was Targeted by a Fake Employer Running a Real NPM Supply Chain Attack
 author: Toufiqur Rahaman Chowdhury
 published: "2025-07-25"
-updated: "2025-07-31"
+updated: "2026-01-22"
 tags:
   [
     npm,
@@ -36,12 +36,12 @@ Job hunting is stressful enough without having to dodge sophisticated cyberattac
 ## Table of Contents
 
 - [Timeline of Events](#timeline-of-events)
-  - [June 25, 2025](#june-25-2025)
-  - [June 26, 2025](#june-26-2025)
-  - [June 27, 2025](#june-27-2025)
-  - [July 3, 2025](#july-3-2025)
-  - [July 4, 2025](#july-4-2025)
-  - [July 10-24, 2025](#july-10-24-2025)
+  - [June 25, 2025](#june-25-2025): Joined a Slack group invited by an "employer"
+  - [June 26, 2025](#june-26-2025): First contact
+  - [June 27, 2025](#june-27-2025): Noticed Bitbucket repo recreated
+  - [July 3, 2025](#july-3-2025): Attacker re-published malicious NPM package as `async-queuelite`
+  - [July 4, 2025](#july-4-2025): Attacker re-published malicious NPM package as `restpilot`
+  - [July 10-24, 2025](#july-10-24-2025): The attacker pivoted and changed tactic
 - [Dissecting `async-queuelite`: A Real Backdoor](#dissecting-async-queuelite-a-real-backdoor)
   - [Breakdown: How the Backdoor Works](#breakdown-how-the-backdoor-works)
   - [The Stealth Backdoor](#the-stealth-backdoor)
@@ -53,6 +53,7 @@ Job hunting is stressful enough without having to dodge sophisticated cyberattac
 - [Indicators of Compromise (IOC)](#indicators-of-compromise-ioc)
 - [Lessons for Developers](#lessons-for-developers)
 - [Final Thoughts](#final-thoughts)
+- [Related Discussions](#related-discussions)
 - [About the Author](#about-the-author)
 
 ## Timeline of Events
@@ -482,11 +483,14 @@ If I hadn’t been cautious, this could’ve ended very differently. If you're a
 
 Feel free to share this story. If it protects even one developer, it's worth it.
 
----
+> _If you have seen any packages or messages similar to this incident, or if you'd like to collaborate on raising awareness, feel free to reach out._
 
-_If you have seen any packages or messages similar to this incident, or if you'd like to collaborate on raising awareness, feel free to reach out._
+## Related Discussions
 
----
+This article is also shared on the following platforms, where you can comment, like, or reshare:
+
+- [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7354270311967604736/)
+- [dev.to](http://dev.to/alien45/i-was-targeted-by-a-fake-employer-running-a-real-npm-supply-chain-attack-54i5)
 
 ## About the Author
 

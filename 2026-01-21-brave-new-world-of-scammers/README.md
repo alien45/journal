@@ -28,15 +28,13 @@ Brave New World of Scammers Targeting Developers
 
 _Author: [Toufiqur Rahaman Chowdhury](https://alien45.github.io/cv)_ • Published: 2026-01-21 • [← Back to Journal Home](../)
 
----
+<img src='./assets/hero.png' />
 
 In my [previous article](../2025-07-25-targeted-dev-attack/), I went deep into the rabbit hole of scammers targeting developers pretending to be employers and running a supply chain attack using malicious NPM packages. Since then I have encountered two more attempts by scammers targeting me, each of them using new tactics and bolder approaches.
 
 In this article, I will describe how I narrowly avoided a major security breach and once again put my investigative hat on, explain the clever new tactics used by the scammer and dig into the code. This is as much as a learning experience for me as it is to document and warn others about it. While the article is very technical, reading about the details of the events may also be helpful for non-technical readers to learn and potentially avoid online hacking attempts and overall be more cautious dealing with strangers online.
 
 Please note that while I have been repeatedly targetted, I was cautious and lucky enough to have sniffed the red flags in time to avoid being hacked. However, I came across LinkedIn posts by other who were not as lucky.
-
-<img src="./assets/hero.png" />
 
 ## Table of Contents
 
@@ -55,7 +53,8 @@ Please note that while I have been repeatedly targetted, I was cautious and luck
   - [Execution and Environment Isolation](#execution-and-environment-isolation)
   - [Browser and Network Hygiene](#browser-and-network-hygiene)
   - [Recruitment and Social Engineering Red Flags](#recruitment-and-social-engineering-red-flags)
-- [Conclusion](#conclusion)
+- [Final Thoughts](#final-thoughts)
+- [Related Discussions](#related-discussions)
 - [About the Author](#about-the-author)
 
 ## Timeline of Events
@@ -500,11 +499,21 @@ Based on my experiences, here are some tips to help you stay safe in the wild we
 - Treat unsolicited follow-ups that align suspiciously with task deadlines as a red flag.
   - These are often used as activity or responsiveness checks rather than genuine interest.
 
-## Conclusion
+## Final Thoughts
 
 This project was not just poorly written; it was a deliberately crafted weapon. The combination of a remote code execution backdoor, a covert payload delivery system using an unverified smart contract, and multiple other critical vulnerabilities confirms this was an attempt to compromise my system. This incident is a stark reminder: **never trust and run code from an unknown source without a thorough security audit.**
 
 What's really clever about this is that putting me on the spot during the call by asking me to clone the repository without giving me a chance to look through the code for any potential malicious intent. If I had not previously been attacked, as I mentioned in my [previous article](../2025-07-25-targeted-dev-attack/), I might have done it without realizing that this was an active attempt at hacking my computer and potentially doing a lot of harm not only to me but also to any of my current or future employers. The attackers are not only becoming clever at their tactics, but also becoming bolder to the point of even showing their face to make everything sound as legit as possible.
+
+> _If you’ve encountered similar incidents, or want to collaborate on raising awareness, feel free to reach out._
+
+## Related Discussions
+
+This article is also shared on the following platforms, where you can comment, like, or reshare:
+
+- [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7419508748513316864/)
+- [dev.to](https://dev.to/alien45/brave-new-world-of-scammers-targeting-developers-313p)
+- [X (Twitter)](https://x.com/toufiq1618/status/2014430425276428397)
 
 ## About the Author
 
