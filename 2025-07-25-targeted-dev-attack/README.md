@@ -1,8 +1,8 @@
 ---
 title: I Was Targeted by a Fake Employer Running a Real NPM Supply Chain Attack
 author: Toufiqur Rahaman Chowdhury
-published: 2025-07-25
-updated: 2025-07-31
+published: "2025-07-25"
+updated: "2025-07-31"
 tags:
   [
     npm,
@@ -14,7 +14,7 @@ tags:
     recruitment,
     nodejs,
   ]
-canonical_url: https://github.com/alien45/journal/2025-07-25-targeted-dev-attack/README.md
+canonical_url: https://alien45.github.io/journal/2025-07-25-targeted-dev-attack/
 ---
 
 <h1 class="page-title">
