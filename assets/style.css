@@ -61,7 +61,7 @@ figure > img.screenshot:not(.full-width) {
 }
 
 /* Code blocks */
-.markdown-body pre.highlight {
+pre {
   background: #000000c7;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -75,7 +75,7 @@ figure > img.screenshot:not(.full-width) {
   position: relative;
 }
 /* Add "Copy" button to code blocks */
-.markdown-body pre.highlight::after {
+pre::after {
   background: #626262a6;
   border-bottom-right-radius: 6px;
   color: white;
@@ -88,9 +88,39 @@ figure > img.screenshot:not(.full-width) {
   position: absolute;
   top: 0;
 }
-/* .markdown-body pre.highlight:hover::after {
+
+.markdown-body .highlight pre:hover::after,
+.markdown-body pre:hover::after {
   color: yellow;
-} */
+}
+
+/** Add expand/collapse button to code blocks **/
+pre::before {
+  background: #626262a6;
+  border-bottom-left-radius: 6px;
+  color: white;
+  content: "⛶";
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  font-weight: bold;
+  right: 0;
+  padding: 0px 19px;
+  position: absolute;
+  top: 0;
+}
+pre.expanded {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+pre.expanded::before {
+  content: "⤫";
+}
 
 /**
  * "Copy" button when clicked
@@ -100,7 +130,7 @@ pre.copied {
   opacity: 0.8;
 }
 pre.copied::after {
-  color: yellow;
+  color: yellow !important;
   content: "Copied!" !important;
 }
 

@@ -8,19 +8,28 @@ const isDark = () => {
 };
 
 // Handle copy code icon click
-const iconClickHandler = async (event) => {
+const handleCodeBlockIconsClick = async (event) => {
     const iconWidth = 50; //px
     const iconHeight = 22; //px
     const rect = event.target.getBoundingClientRect();
     const x = event.clientX;
     const y = event.clientY;
-    const icCopyIconClicked =
+    const copyClicked =
         x >= rect.x &&
         x <= rect.x + iconWidth &&
         y >= rect.y &&
         y <= rect.y + iconHeight;
-    if (!icCopyIconClicked) return;
+    if (copyClicked) return handleCopyCode(event);
 
+    const expandClicked =
+        x >= rect.x + rect.width - iconWidth &&
+        x <= rect.x + rect.width &&
+        y >= rect.y &&
+        y <= rect.y + iconHeight;
+    if (expandClicked) return handleToggleExpandCodeBlock(event);
+};
+
+const handleCopyCode = async (event) => {
     event.preventDefault();
     const codeStr = event.target.textContent;
     let success = false;
@@ -39,13 +48,18 @@ const iconClickHandler = async (event) => {
         success = document.execCommand("copy");
         document.body.removeChild(el);
     }
-    console.log("Code copied:", success);
     if (!success) return;
 
     event.target.classList.add("copied");
     setTimeout(() => {
         event.target.classList.remove("copied");
     }, 1000);
+};
+
+const handleToggleExpandCodeBlock = (event) => {
+    event.preventDefault();
+    const pre = event.target;
+    pre.classList.toggle("expanded");
 };
 
 /** Handle theme toggle button click */
@@ -76,7 +90,7 @@ toggleBtnSetup();
 document.body.addEventListener("click", (event) => {
     switch (event.target.nodeName) {
         case "PRE":
-            iconClickHandler(event);
+            handleCodeBlockIconsClick(event);
             break;
         case "BUTTON":
             if (event.target.id !== btnToggleId) return;
