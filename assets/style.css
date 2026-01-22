@@ -60,7 +60,10 @@ figure > img.screenshot:not(.full-width) {
   max-width: clamp(15px, 90%, 450px);
 }
 
-/* Code blocks */
+/**
+ * Code blocks
+ * PS: Two selectors are needed to target both GitHub pages's styling and VSCode's markdown preview styling.
+ */
 .markdown-body .highlight pre,
 .markdown-body pre {
   background: #0c0c0c;
@@ -133,6 +136,11 @@ body:not(.dark) .markdown-body pre {
   top: 0;
   width: 100%;
   z-index: 1;
+}
+/** Float copy and expqand icons when expanded **/
+.markdown-body .highlight pre.expanded::before,
+.markdown-body .highlight pre.expanded::after {
+  position: fixed;
 }
 
 /**
