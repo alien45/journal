@@ -1,20 +1,33 @@
 body {
+  background-color: #141414;
+  color: white;
   margin: auto;
   max-width: 900px;
 }
+body:not(.dark) {
+  color: #24292e;
+  background-color: #fff;
+}
 
 .page-title {
-  border: none;
-  font-size: 1.6em;
+  border: none !important;
+  color: #999;
+  text-align: center;
+}
+body:not(.dark) .page-title {
+  color: #555;
 }
 
 .page-subtitle {
-  border: none;
+  border: none !important;
   color: #555;
-  font-size: 1em;
+  font-size: 1.5em;
   font-style: italic;
-  font-weight: normal;
-  margin-top: 0.4em;
+  margin-top: -0.5em !important;
+  text-align: center;
+}
+body:not(.dark) .page-subtitle {
+  color: #999;
 }
 
 /* Hide the default GitHub page title (repo name) */
@@ -48,8 +61,7 @@ figure > img.screenshot:not(.full-width) {
 }
 
 /* Code blocks */
-.markdown-body .highlight pre,
-.markdown-body pre {
+.markdown-body pre.highlight {
   background: #000000c7;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -62,8 +74,8 @@ figure > img.screenshot:not(.full-width) {
   padding: 1.25rem 1.25rem;
   position: relative;
 }
-.markdown-body .highlight pre::after,
-.markdown-body pre::after {
+/* Add "Copy" button to code blocks */
+.markdown-body pre.highlight::after {
   background: #626262a6;
   border-bottom-right-radius: 6px;
   color: white;
@@ -76,19 +88,25 @@ figure > img.screenshot:not(.full-width) {
   position: absolute;
   top: 0;
 }
-.markdown-body .highlight pre:hover::after,
-.markdown-body pre:hover::after {
+/* .markdown-body pre.highlight:hover::after {
   color: yellow;
-}
+} */
 
+/**
+ * "Copy" button when clicked
+ */
 pre.copied {
-  opacity: 0.8;
   border: 1px solid rgba(255, 255, 0, 0.253);
+  opacity: 0.8;
 }
 pre.copied::after {
+  color: yellow;
   content: "Copied!" !important;
 }
-/** adjust code colors for better visibility **/
+
+/**
+ * Adjust code colors for better visibility
+ */
 pre .k,
 pre.highlight .k,
 pre .kd,
@@ -105,15 +123,16 @@ pre.highlight .o {
 .highlight .nf {
   color: #000080;
 }
-
-@media screen and (max-width: 600px) {
-  body {
-    margin: 2.5rem 1rem;
-  }
+/** Removes background from inline code block wrapper. If removed, in dark mode, shows white colored corners. **/
+body div.highlight {
+  background: transparent;
 }
 
+/**
+ * Floating Theme Toggle Button 
+ */
 #theme-toggle {
-  background: #141414;
+  background: grey;
   border-radius: 5px;
   border: none;
   color: white;
@@ -122,22 +141,15 @@ pre.highlight .o {
   right: 15px;
   top: 5px;
 }
+body:not(.dark) #theme-toggle {
+  background: #141414;
+}
 
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-  body:not(.light),
-  body.dark {
-    background: #141414;
-    color: white;
-  }
-
-  body:not(.light) div.highlight,
-  body.dark div.highlight {
-    background: transparent;
-  }
-
-  body:not(.light) #theme-toggle,
-  body.dark #theme-toggle {
-    background: grey;
+/**
+ * Mobile Responsiveness
+ */
+@media screen and (max-width: 600px) {
+  body {
+    margin: 2.5rem 1rem;
   }
 }
