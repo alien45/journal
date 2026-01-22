@@ -61,7 +61,8 @@ figure > img.screenshot:not(.full-width) {
 }
 
 /* Code blocks */
-pre {
+.markdown-body .highlight pre,
+.markdown-body pre {
   background: #000000c7;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -75,7 +76,8 @@ pre {
   position: relative;
 }
 /* Add "Copy" button to code blocks */
-pre::after {
+.markdown-body .highlight pre::after,
+.markdown-body pre::after {
   background: #626262a6;
   border-bottom-right-radius: 6px;
   color: white;
@@ -89,13 +91,9 @@ pre::after {
   top: 0;
 }
 
-.markdown-body .highlight pre:hover::after,
-.markdown-body pre:hover::after {
-  color: yellow;
-}
-
 /** Add expand/collapse button to code blocks **/
-pre::before {
+.markdown-body .highlight pre::before,
+.markdown-body pre::before {
   background: #626262a6;
   border-bottom-left-radius: 6px;
   color: white;
@@ -109,17 +107,21 @@ pre::before {
   position: absolute;
   top: 0;
 }
-pre.expanded {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-}
-pre.expanded::before {
+.markdown-body .highlight pre.expanded::before,
+.markdown-body pre.expanded::before {
   content: "⤫";
+}
+.markdown-body .highlight pre.expanded,
+.markdown-body pre.expanded {
+  bottom: 0;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  padding: 50px 100px !important;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 /**
