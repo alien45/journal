@@ -1,8 +1,8 @@
 ---
 title: Brave New World of Scammers Targeting Developers
 author: Toufiqur Rahaman Chowdhury
-published: 2026-01-21
-updated:
+published: "2026-01-21"
+updated: "2026-01-21"
 tags:
   [
     rce,
