@@ -63,7 +63,8 @@ figure > img.screenshot:not(.full-width) {
 /* Code blocks */
 .markdown-body .highlight pre,
 .markdown-body pre {
-  background: #000000c7;
+  background: #0c0c0c;
+  /* background: #000000c7; */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   color: #c9d1d9;
@@ -75,13 +76,16 @@ figure > img.screenshot:not(.full-width) {
   padding: 1.25rem 1.25rem;
   position: relative;
 }
+body:not(.dark) .markdown-body .highlight pre,
+body:not(.dark) .markdown-body pre {
+  background: #2e2e2e;
+}
 
 /**
  * Add "Copy" button to code blocks
  */
 .markdown-body .highlight pre::after,
 .markdown-body pre::after {
-  background: #0c0c0c;
   border-bottom-right-radius: 6px;
   color: white;
   content: "Code";
@@ -92,10 +96,6 @@ figure > img.screenshot:not(.full-width) {
   padding: 0.15rem 0.6rem 0.1rem 0.8rem;
   position: absolute;
   top: 0;
-}
-body:not(.dark) .markdown-body .highlight pre::after,
-body:not(.dark) .markdown-body pre::after {
-  background: #2e2e2e;
 }
 
 /**
@@ -122,6 +122,7 @@ body:not(.dark) .markdown-body pre::after {
 }
 .markdown-body .highlight pre.expanded,
 .markdown-body pre.expanded {
+  background: #0c0c0c;
   bottom: 0;
   height: 100%;
   position: fixed;
