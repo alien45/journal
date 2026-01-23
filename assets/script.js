@@ -58,8 +58,7 @@ const handleCopyCode = async (event) => {
 
 const handleToggleExpandCodeBlock = (event) => {
     event.preventDefault();
-    const pre = event.target;
-    pre.classList.toggle("expanded");
+    event.target.classList.toggle("expanded");
 };
 
 /** Handle theme toggle button click */
@@ -98,3 +97,18 @@ document.body.addEventListener("click", (event) => {
             break;
     }
 });
+
+// Function to handle keydown events
+function handleKeyDown(event) {
+    switch (event.key) {
+        case 'Escape':
+            const expandedPres = document.querySelectorAll('pre.expanded');
+            if (expandedPres.length > 0) {
+                expandedPres.forEach(pre => pre.classList.remove('expanded'));
+            }
+            break
+    }
+}
+
+// Add event listener for keydown events
+document.addEventListener('keydown', handleKeyDown);
