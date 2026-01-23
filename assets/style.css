@@ -89,6 +89,7 @@ body:not(.dark) .markdown-body pre {
  */
 .markdown-body .highlight pre::after,
 .markdown-body pre::after {
+  background: #626262a6;
   border-bottom-right-radius: 6px;
   color: white;
   content: "Code";
