@@ -23,8 +23,6 @@ _Author: [Toufiqur Rahaman Chowdhury](https://alien45.github.io/cv)_ • Publish
 
 Page content goes here## Related Discussions
 
-## Related Discussions
-
 This article is also shared on the following platforms, where you can comment, like, or reshare:
 
 - [LinkedIn](https://www.linkedin.com/feed/update/...........)
