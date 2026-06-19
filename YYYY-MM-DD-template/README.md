@@ -21,7 +21,7 @@ _Author: [Toufiqur Rahaman Chowdhury](https://alien45.github.io/cv)_ • Publish
 
 ### Page content
 
-Page content goes here## Related Discussions
+Page content goes here
 
 ## Related Discussions
 
