@@ -125,8 +125,8 @@ How are you handling stale requests and race conditions in your applications tod
 This article is also shared on the following platforms, where you can comment, like, or reshare:
 
 - [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7473699390872858624/)
+- [dev.to](https://dev.to/alien45/the-problem-debouncing-doesnt-solve-2b7g)
 - [X (Twitter)](https://x.com/toufiq1618/status/2068007109417947343)
-<!-- - [dev.to](https://dev.to/alien45/..........) -->
 
 ### 👤 About the Author
 
