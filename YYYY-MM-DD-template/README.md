@@ -1,10 +1,11 @@
 ---
 title: TEMPLATE TITLE
 author: Toufiqur Rahaman Chowdhury
+# For dev.to set "published" to "true"
 published: YYYY-MM-DD
 updated: YYYY-MM-DD
 tags: [tag1, tag2, ...]
-canonical_url: https://github.com/alien45/journal/YYYY-MM-DD-template-title/
+canonical_url: https://alien45.github.io/journal/YYYY-MM-DD-template-title/
 ---
 
 <h2 class="page-title">
@@ -19,7 +20,7 @@ _Author: [Toufiqur Rahaman Chowdhury](https://alien45.github.io/cv)_ • Publish
 
 ---
 
-### Page content
+## Page content
 
 Page content goes here
 
