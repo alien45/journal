@@ -21,7 +21,13 @@ _Author: [Toufiqur Rahaman Chowdhury](https://alien45.github.io/cv)_ • Publish
 
 ### Page content
 
-Page content goes here
+Page content goes here## Related Discussions
+
+This article is also shared on the following platforms, where you can comment, like, or reshare:
+
+- [LinkedIn](https://www.linkedin.com/feed/update/...........)
+- [dev.to](https://dev.to/alien45/..........)
+- [X (Twitter)](https://x.com/toufiq1618/status/.........)
 
 ### 👤 About the Author
 
