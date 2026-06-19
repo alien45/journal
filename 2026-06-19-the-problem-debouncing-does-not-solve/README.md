@@ -138,4 +138,5 @@ Toufiqur Rahaman Chowdhury is a full-stack software developer with over 8 years 
 • [GitHub](https://github.com/alien45)
 • [Contact / Hire Me](https://alien45.github.io/cv/Toufiqur_Chowdhury_CV.pdf)
 
-<link rel="stylesheet" href="../../assets/style.css" />
+<link rel="stylesheet" href="../assets/style.css" />
+<script type="text/javascript" src="../assets/script.js"></script>
