@@ -198,10 +198,29 @@ body:not(.dark) #theme-toggle {
 }
 
 /**
- * Mobile Responsiveness
+ * Mobile
  */
 @media screen and (max-width: 600px) {
   body {
     margin: 2.5rem 1rem;
+  }
+  .hide-on-mobile {
+    display: none;
+  }
+}
+/**
+ * Tablet
+ */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  .hide-on-tablet {
+    display: none;
+  }
+}
+/**
+ * Desktop
+ */
+@media screen and (min-width: 900px) {
+  .hide-on-desktop {
+    display: none;
   }
 }
