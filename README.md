@@ -12,6 +12,7 @@ You're welcome to read, explore, or use anything here — just know that I write
 
 > Articles are listed in reverse chronological order.
 
+- 📅 2026-06-28 — [Your API Client Is One Typo Away From Leaking a Token](./2026-06-28-fetch-api-client/)
 - 📅 2026-06-19 — [The Problem Debouncing Doesn't Solve](./2026-06-19-the-problem-debouncing-does-not-solve/)
 - 📅 2026-01-21 — [Brave New World of Scammers Targeting Developers](./2026-01-21-brave-new-world-of-scammers/)
 - 📅 2025-07-25 — [I Was Targeted by a Fake Employer Running a Real NPM Supply Chain Attack](./2025-07-25-targeted-dev-attack/)

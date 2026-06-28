@@ -141,13 +141,13 @@ How are you isolating config between the different APIs your app talks to?
 - [**Documentation & playground**](https://alien45.github.io/superutils/packages/@superutils/fetch/)
 - [**Source Code**](https://github.com/alien45/superutils/tree/main/packages/fetch)
 
-<!-- ## Related Discussions
+## Related Discussions
 
 This article is also shared on the following platforms, where you can comment, like, or reshare:
 
-- [LinkedIn](https://www.linkedin.com/feed/update/...........)
-- [dev.to](https://dev.to/alien45/..........)
-- [X (Twitter)](https://x.com/toufiq1618/status/.........) -->
+- [LinkedIn](https://www.linkedin.com/feed/update/urn:li:groupPost:121615-7476819442837073920/)
+- [dev.to](https://dev.to/alien45/your-api-client-is-one-typo-away-from-leaking-a-token-41g8)
+- [X (Twitter)](https://x.com/toufiq1618/status/2071054205876412853?s=20)
 
 ### 👤 About the Author
 
